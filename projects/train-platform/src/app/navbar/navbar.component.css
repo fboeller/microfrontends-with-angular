@@ -18,17 +18,18 @@ ul {
 li {
   line-height: 40px;
   vertical-align: middle;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .page-options {
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  flex-wrap: nowrap;
+  gap: 1rem;
   line-height: 40px;
 }
 
 label {
-  margin-right: 10px;
+  margin-right: 0.5rem;
 }
