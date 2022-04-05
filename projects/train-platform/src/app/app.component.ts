@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
   `,
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent implements OnDestroy {
+  subscription: Subscription;
+
+  @HostBinding('class') classes = 'dark';
+
+  constructor(private themeService: ThemeService) {
+    this.subscription = this.themeService.theme$.subscribe((theme) => {
+      this.classes = theme;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+}

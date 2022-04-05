@@ -1,0 +1,15 @@
+:host {
+  --background-color: white;
+  --font-color: black;
+}
+
+:host.dark {
+  --background-color: black;
+  --font-color: white;
+}
+
+:host {
+  display: block;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}

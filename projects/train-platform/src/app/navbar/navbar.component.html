@@ -6,6 +6,13 @@
   </ul>
   <div class="page-options">
     <div>
+      <label>{{ "navbar.theme.text" | translate }}</label>
+      <select [ngModel]="theme" (ngModelChange)="updateTheme($event)">
+        <option value="light">{{ "navbar.theme.light" | translate }}</option>
+        <option value="dark">{{ "navbar.theme.dark" | translate }}</option>
+      </select>
+    </div>
+    <div>
       <label>{{ "navbar.language.text" | translate }}</label>
       <select [ngModel]="language" (ngModelChange)="updateLanguage($event)">
         <option value="en">{{ "navbar.language.en" | translate }}</option>

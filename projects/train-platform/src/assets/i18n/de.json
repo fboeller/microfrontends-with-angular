@@ -5,6 +5,11 @@
       "text": "Sprache",
       "en": "Englisch",
       "de": "Deutsch"
+    },
+    "theme": {
+      "text": "Farbe",
+      "light": "Hell",
+      "dark": "Dunkel"
     }
   },
   "booking": {
