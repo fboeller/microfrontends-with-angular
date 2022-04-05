@@ -3,40 +3,10 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-elements-router": {
-      "projectType": "library",
-      "root": "projects/ngx-elements-router",
-      "sourceRoot": "projects/ngx-elements-router/src",
-      "prefix": "aer",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/ngx-elements-router/tsconfig.lib.json",
-            "project": "projects/ngx-elements-router/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-elements-router/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-elements-router/tsconfig.lib.json",
-              "projects/ngx-elements-router/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "example-micro-frontend": {
+    "bookings": {
       "projectType": "application",
-      "root": "projects/example-micro-frontend",
-      "sourceRoot": "projects/example-micro-frontend/src",
+      "root": "projects/bookings",
+      "sourceRoot": "projects/bookings/src",
       "prefix": "mf",
       "architect": {
         "build": {
@@ -44,25 +14,25 @@
           "options": {
             "singleBundle": true,
             "outputHashing": "none",
-            "outputPath": "dist/example-micro-frontend",
-            "index": "projects/example-micro-frontend/src/index.html",
-            "main": "projects/example-micro-frontend/src/main.ts",
-            "polyfills": "projects/example-micro-frontend/src/polyfills.ts",
-            "tsConfig": "projects/example-micro-frontend/tsconfig.app.json",
+            "outputPath": "dist/bookings",
+            "index": "projects/bookings/src/index.html",
+            "main": "projects/bookings/src/main.ts",
+            "polyfills": "projects/bookings/src/polyfills.ts",
+            "tsConfig": "projects/bookings/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/example-micro-frontend/src/favicon.ico",
-              "projects/example-micro-frontend/src/assets"
+              "projects/bookings/src/favicon.ico",
+              "projects/bookings/src/assets"
             ],
-            "styles": ["projects/example-micro-frontend/src/styles.css"],
-            "scripts": ["projects/ngx-elements-router/src/dev-platform.js"]
+            "styles": ["projects/bookings/src/styles.css"],
+            "scripts": ["node_modules/ngx-elements-router/src/dev-platform.js"]
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/example-micro-frontend/src/environments/environment.ts",
-                  "with": "projects/example-micro-frontend/src/environments/environment.prod.ts"
+                  "replace": "projects/bookings/src/environments/environment.ts",
+                  "with": "projects/bookings/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -90,57 +60,57 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "example-micro-frontend:build"
+            "browserTarget": "bookings:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "example-micro-frontend:build:production"
+              "browserTarget": "bookings:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "example-micro-frontend:build"
+            "browserTarget": "bookings:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/example-micro-frontend/tsconfig.app.json"],
+            "tsConfig": ["projects/bookings/tsconfig.app.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "example-platform": {
+    "train-platform": {
       "projectType": "application",
-      "root": "projects/example-platform",
-      "sourceRoot": "projects/example-platform/src",
+      "root": "projects/train-platform",
+      "sourceRoot": "projects/train-platform/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/example-platform",
-            "index": "projects/example-platform/src/index.html",
-            "main": "projects/example-platform/src/main.ts",
-            "polyfills": "projects/example-platform/src/polyfills.ts",
-            "tsConfig": "projects/example-platform/tsconfig.app.json",
+            "outputPath": "dist/train-platform",
+            "index": "projects/train-platform/src/index.html",
+            "main": "projects/train-platform/src/main.ts",
+            "polyfills": "projects/train-platform/src/polyfills.ts",
+            "tsConfig": "projects/train-platform/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/example-platform/src/favicon.ico",
-              "projects/example-platform/src/assets"
+              "projects/train-platform/src/favicon.ico",
+              "projects/train-platform/src/assets"
             ],
-            "styles": ["projects/example-platform/src/styles.css"],
+            "styles": ["projects/train-platform/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/example-platform/src/environments/environment.ts",
-                  "with": "projects/example-platform/src/environments/environment.prod.ts"
+                  "replace": "projects/train-platform/src/environments/environment.ts",
+                  "with": "projects/train-platform/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -168,29 +138,29 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "example-platform:build"
+            "browserTarget": "train-platform:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "example-platform:build:production"
+              "browserTarget": "train-platform:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "example-platform:build"
+            "browserTarget": "train-platform:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/example-platform/tsconfig.app.json"],
+            "tsConfig": ["projects/train-platform/tsconfig.app.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "ngx-elements-router"
+  "defaultProject": "train-platform"
 }

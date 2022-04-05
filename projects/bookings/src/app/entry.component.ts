@@ -6,10 +6,12 @@ import {
   OnDestroy,
   Output,
 } from '@angular/core';
-import { RouterEvent } from '../../../ngx-elements-router/src/lib/router-event.type';
-import { EntryRoutingService } from '../../../ngx-elements-router/src/lib/entry-routing.service';
+import {
+  EntryZoneService,
+  EntryRoutingService,
+  RouterEvent,
+} from 'ngx-elements-router';
 import { Observable, Subject, Subscription } from 'rxjs';
-import { EntryZoneService } from 'projects/ngx-elements-router/src/lib/entry-zone.service';
 
 @Component({
   selector: 'mf-angular-entry',

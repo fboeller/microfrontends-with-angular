@@ -33,7 +33,7 @@ $ npm install
 ### Dev platform with micro frontend
 
 ```
-$ npm start example-micro-frontend
+$ npm start bookings
 ```
 
 A visit to `localhost:4200` shows the dev platform.
@@ -42,13 +42,13 @@ If you click the buttons, you see how the route changes, independent from if the
 ### Angular platform with micro frontend
 
 ```
-$ npm run build example-micro-frontend
+$ npm run build bookings
 $ npm install -g http-server
-$ http-server dist/example-micro-frontend --port 4201
+$ http-server dist/bookings --port 4201
 ```
 
 ```
-$ npm start example-platform
+$ npm start train-platform
 ```
 
 A visit to `localhost:4200` shows the Angular platform.
@@ -56,7 +56,7 @@ The bundle file `main.js` is served from `localhost:4201` without hot-reloading.
 
 ## Prerequisites
 
-You have an Angular application that acts as a [platform](./projects/example-platform) and an Angular application that acts as a [micro frontend](./projects/example-micro-frontend).
+You have an Angular application that acts as a [platform](./projects/train-platform) and an Angular application that acts as a [micro frontend](./projects/bookings).
 A build of the micro frontend results in a single build that registers custom elements on loading.
 
 ## Usage
@@ -74,7 +74,7 @@ a relative path `./abc` to refer to a route relative to the route `/micro-fronte
 To be able to reference your custom element in the routes, you need to create a host component.
 You can use the `aerRouting` on the custom element to pass route changes to the micro frontend and to allow the micro frontend to pass route changes to the platform.
 
-[platform/micro-frontend-host.component.ts](./projects/example-platform/src/app/micro-frontend-host/micro-frontend-host.component.ts)
+[platform/micro-frontend-host.component.ts](./projects/train-platform/src/app/micro-frontend-host/micro-frontend-host.component.ts)
 
 ```typescript
 import { Component } from "@angular/core";
@@ -93,7 +93,7 @@ Import `AngularElementsRouterModule` to be able to use the `aerRouting` directiv
 Use the schema `CUSTOM_ELEMENTS_SCHEMA` to make Angular accept the custom element in the host component.
 Use the path `**` to pass all sub paths to the custom element.
 
-[platform/micro-frontend-host.module.ts](./projects/example-platform/src/app/micro-frontend-host/micro-frontend-host.module.ts)
+[platform/micro-frontend-host.module.ts](./projects/train-platform/src/app/micro-frontend-host/micro-frontend-host.module.ts)
 
 ```typescript
 import { AngularElementsRouterModule } from "ngx-elements-router";
@@ -119,7 +119,7 @@ export class MicroFrontendHostModule {}
 Choose a route under which your micro frontend should be loaded.
 Use the `LoadBundleGuard` to load the bundle of your micro frontend on the first activation of the route.
 
-[platform/app-routing.module.ts](./projects/example-platform/src/app/app-routing.module.ts)
+[platform/app-routing.module.ts](./projects/train-platform/src/app/app-routing.module.ts)
 
 ```typescript
 import { LoadBundleGuard } from "ngx-elements-router";
@@ -152,7 +152,7 @@ Since Angular 11, your bundle name might be `main-es2015.js`.
 Use the `EntryRoutingService` in the Angular component representing the custom element.
 This way, route changes are passed to the Angular router in the micro frontend and in the other direction to the platform.
 
-[micro-frontend/entry-component.ts](./projects/example-micro-frontend/src/app/entry.component.ts)
+[micro-frontend/entry-component.ts](./projects/bookings/src/app/entry.component.ts)
 
 ```typescript
 import { EntryRoutingService } from 'ngx-elements-router';
@@ -189,7 +189,7 @@ export class EntryComponent implements OnChanges, OnDestroy {
 
 The module in your micro frontend needs to define the custom element in the browser on bootstrap of the module.
 
-[micro-frontend/app-module.ts](./projects/example-micro-frontend/src/app/app.module.ts)
+[micro-frontend/app-module.ts](./projects/bookings/src/app/app.module.ts)
 
 ```typescript
 import { EntryComponent } from "./entry.component";
@@ -220,7 +220,7 @@ Inside this component, you can use an absolute path `/abc` to refer to a route o
 You can use a relative path `./abc` to refer to a route relative to the micro frontend route.
 It can itself have a router outlet to mount different components depending on the subpath of the micro frontend.
 
-[micro-frontend/micro-frontend.component.ts](./projects/example-micro-frontend/src/app/micro-frontend.component.ts)
+[micro-frontend/micro-frontend.component.ts](./projects/bookings/src/app/micro-frontend.component.ts)
 
 ```typescript
 @Component({
@@ -241,7 +241,7 @@ If the platform delegates all traffic at `/micro-frontend` to the micro frontend
 All other traffic needs to go to a route `**` such that the router module of the micro frontend does not discard it as undefined routes.
 This way, you can navigate to links outside of the micro frontend from within the micro frontend.
 
-[micro-frontend/app-routing.module.ts](./projects/example-micro-frontend/src/app/app-routing.module.ts)
+[micro-frontend/app-routing.module.ts](./projects/bookings/src/app/app-routing.module.ts)
 
 ```typescript
 import { NoComponent } from "ngx-elements-router";
@@ -261,7 +261,7 @@ const routes: Routes = [
 By default, the Angular router within the micro frontend tries to update the browser url.
 Use the `NoopLocationStrategy` to prevent this, such that the platform has the only access.
 
-[micro-frontend/app-routing.module.ts](./projects/example-micro-frontend/src/app/app-routing.module.ts)
+[micro-frontend/app-routing.module.ts](./projects/bookings/src/app/app-routing.module.ts)
 
 ```typescript
 import { NoopLocationStrategy } from "ngx-elements-router";
@@ -300,7 +300,7 @@ To use it, include the `dev-platform.js` in the scripts of your micro frontend i
 
 Setup an `index.html` in the micro frontend app.
 
-[micro-frontend/index.html](./projects/example-micro-frontend/src/index.html)
+[micro-frontend/index.html](./projects/bookings/src/index.html)
 
 ```html
 <!DOCTYPE html>
@@ -335,7 +335,7 @@ To mitigate that, you can pass Zone.js microtask empty events to the micro front
 You can use the `EntryZoneService` in the Angular component representing the custom element.
 This way, Zone.js micro task empty events are passed to the micro frontend and a change detection cycle is triggered.
 
-[micro-frontend/entry-component.ts](./projects/example-micro-frontend/src/app/entry.component.ts)
+[micro-frontend/entry-component.ts](./projects/bookings/src/app/entry.component.ts)
 
 ```typescript
 import { EntryZoneService } from "ngx-elements-router";
@@ -366,7 +366,7 @@ export class ExampleComponent implements OnChanges, OnDestroy {
 
 Use the `aerRouting` on the custom element to pass micro task empty events to the micro frontend.
 
-[platform/micro-frontend-host.component.ts](./projects/example-platform/src/app/micro-frontend-host/micro-frontend-host.component.ts)
+[platform/micro-frontend-host.component.ts](./projects/train-platform/src/app/micro-frontend-host/micro-frontend-host.component.ts)
 
 ```typescript
 import { Component } from "@angular/core";
