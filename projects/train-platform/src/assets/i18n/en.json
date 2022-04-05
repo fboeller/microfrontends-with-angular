@@ -10,7 +10,9 @@
   "booking": {
     "reserveSeatQuestion": "Do you want to reserve a seat?",
     "firstClassQuestion": "Do you want to sit in first class?",
-    "bookAction": "Book"
+    "bookAction": "Book",
+    "confirmation": "Booked a journey!",
+    "error": "Journey could not be booked!"
   },
   "journey": {
     "bookAction": "Book"

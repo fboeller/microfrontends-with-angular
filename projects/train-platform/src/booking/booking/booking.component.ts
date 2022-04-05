@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { TranslateService } from '@ngx-translate/core';
 import { BookingService } from '../booking.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class BookingComponent {
   constructor(
     private bookingService: BookingService,
     private route: ActivatedRoute,
-    private toast: HotToastService
+    private toast: HotToastService,
+    private translateService: TranslateService
   ) {}
 
   book(): void {
@@ -26,15 +28,12 @@ export class BookingComponent {
       })
       .subscribe(
         () => {
-          this.toast
-            .success(`Booked a journey with the id ${this.route.snapshot.params.journeyId}!
-          Reserved Seat? ${this.reserveSeat}
-          First Class? ${this.firstClass}`);
+          this.toast.success(
+            this.translateService.instant('booking.confirmation')
+          );
         },
         () => {
-          this.toast.error(
-            `Journey with the id ${this.route.snapshot.params.journeyId} could not be booked!`
-          );
+          this.toast.error(this.translateService.instant('booking.error'));
         }
       );
   }

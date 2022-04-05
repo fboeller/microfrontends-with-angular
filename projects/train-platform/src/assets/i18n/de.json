@@ -10,7 +10,9 @@
   "booking": {
     "reserveSeatQuestion": "Möchten Sie einen Sitzplatz reservieren?",
     "firstClassQuestion": "Möchten Sie in der ersten Klasse sitzen?",
-    "bookAction": "Buchen"
+    "bookAction": "Buchen",
+    "confirmation": "Reise gebucht!",
+    "error": "Reise konnte nicht gebucht werden!"
   },
   "journey": {
     "bookAction": "Buchen"
