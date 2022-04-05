@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "Home",
+    "language": {
+      "text": "Language",
+      "en": "English",
+      "de": "German"
+    }
+  },
+  "booking": {
+    "reserveSeatQuestion": "Do you want to reserve a seat?",
+    "firstClassQuestion": "Do you want to sit in first class?",
+    "bookAction": "Book"
+  },
+  "journey": {
+    "bookAction": "Book"
+  }
+}

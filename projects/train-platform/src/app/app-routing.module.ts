@@ -1,34 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoadBundleGuard } from 'ngx-elements-router';
-import { PlatformMainPageComponent } from './platform-main-page.component';
-import { PlatformChildPageComponent } from './platform-child-page.component';
+import { BookingModule } from '../booking/booking.module';
+import { BookingComponent } from '../booking/booking/booking.component';
+import { JourneySelectionComponent } from '../journey/journey-selection/journey-selection.component';
+import { JourneyModule } from '../journey/journey.module';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: PlatformMainPageComponent,
+    component: JourneySelectionComponent,
   },
   {
-    path: 'child',
-    component: PlatformChildPageComponent,
-  },
-  {
-    path: 'micro-frontend',
-    canActivate: [LoadBundleGuard],
-    data: {
-      bundleUrl: 'http://localhost:4201/main-es2015.js',
-    },
-    loadChildren: () =>
-      import('./micro-frontend-host/micro-frontend-host.module').then(
-        (m) => m.MicroFrontendHostModule
-      ),
+    path: 'bookings/journey/:journeyId',
+    component: BookingComponent,
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), JourneyModule, BookingModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

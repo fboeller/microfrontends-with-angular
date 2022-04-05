@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/">{{ "navbar.home" | translate }}</a>
+    </li>
+  </ul>
+  <div class="page-options">
+    <div>
+      <label>{{ "navbar.language.text" | translate }}</label>
+      <select [ngModel]="language" (ngModelChange)="updateLanguage($event)">
+        <option value="en">{{ "navbar.language.en" | translate }}</option>
+        <option value="de">{{ "navbar.language.de" | translate }}</option>
+      </select>
+    </div>
+  </div>
+</nav>

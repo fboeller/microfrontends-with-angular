@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let journey of journeys$ | async">
+    <span>{{ journey.from }} -> {{ journey.to }}</span>
+    <div class="buttons">
+      <a [routerLink]="['/bookings/journey', journey.id]">{{
+        "journey.bookAction" | translate
+      }}</a>
+    </div>
+  </li>
+</ul>

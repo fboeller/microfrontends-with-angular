@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <label>{{ "booking.reserveSeatQuestion" | translate }}</label>
+    <input type="checkbox" [(ngModel)]="reserveSeat" />
+  </div>
+  <div>
+    <label>{{ "booking.firstClassQuestion" | translate }}</label>
+    <input type="checkbox" [(ngModel)]="firstClass" />
+  </div>
+</div>
+
+<div>
+  <button (click)="book()">{{ "booking.bookAction" | translate }}</button>
+</div>
