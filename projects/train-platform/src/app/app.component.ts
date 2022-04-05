@@ -5,8 +5,10 @@ import { ThemeService } from './theme.service';
 @Component({
   selector: 'app-root',
   template: `
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
+    <div>
+      <app-navbar></app-navbar>
+      <router-outlet></router-outlet>
+    </div>
   `,
   styleUrls: ['./app.component.css'],
 })

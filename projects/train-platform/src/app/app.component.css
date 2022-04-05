@@ -12,4 +12,12 @@
   display: block;
   background-color: var(--background-color);
   color: var(--font-color);
+  height: 100vh;
+}
+
+:host > div {
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
