@@ -18,8 +18,7 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/projects/train-platform/src",
-      "<rootDir>/projects/bookings/src"
+      "<rootDir>/projects/train-platform/src"
     ],
     "moduleFileExtensions": [
       "ts",
