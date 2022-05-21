@@ -2,7 +2,7 @@
   "name": "microfrontends-with-angular",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve bookings",
+    "start": "ng serve",
     "build": "ng build",
     "test": "npx jest --passWithNoTests",
     "lint": "ng lint",

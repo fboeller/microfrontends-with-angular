@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { BookingService } from '../booking.service';
 
 @Component({
-  selector: 'app-booking',
+  selector: 'mf-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
 })
