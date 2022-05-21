@@ -6,6 +6,7 @@ import { BookingsDevPlatformModule } from '../dev-platform/bookings-dev-platform
 
 export const environment = {
   production: false,
+  assetUrl: '',
 };
 
 export const environmentModules = [BookingsDevPlatformModule];

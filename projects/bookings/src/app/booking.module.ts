@@ -1,4 +1,5 @@
 import { CommonModule, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FormsModule } from '@angular/forms';
@@ -7,15 +8,18 @@ import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoComponent, NoopLocationStrategy } from 'ngx-elements-router';
-import { environmentModules } from '../environments/environment';
+import { environment, environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
 import { EntryComponent } from './entry.component';
+import { MICRO_FRONTEND_URL } from './microfrontend-url.token';
+import { provideTranslateLoader } from './translation-loader.provider';
 
 @NgModule({
   declarations: [EntryComponent, BookingComponent],
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {
@@ -26,10 +30,18 @@ import { EntryComponent } from './entry.component';
     ]),
     environmentModules,
     HotToastModule.forRoot(),
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: provideTranslateLoader(
+        (language) => `/assets/i18n/${language}.json`
+      ),
+      defaultLanguage: 'en',
+    }),
   ],
   exports: [BookingComponent],
-  providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
+  providers: [
+    { provide: LocationStrategy, useClass: NoopLocationStrategy },
+    { provide: MICRO_FRONTEND_URL, useValue: environment.assetUrl },
+  ],
 })
 export class BookingModule {
   constructor(private injector: Injector) {}
