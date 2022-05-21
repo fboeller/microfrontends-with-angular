@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoComponent, NoopLocationStrategy } from 'ngx-elements-router';
+import { environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
 import { EntryComponent } from './entry.component';
 
@@ -23,6 +24,7 @@ import { EntryComponent } from './entry.component';
       },
       { path: '**', component: NoComponent },
     ]),
+    environmentModules,
     HotToastModule.forRoot(),
     TranslateModule.forRoot(),
   ],
