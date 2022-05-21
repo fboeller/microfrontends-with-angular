@@ -1,21 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { Injector, NgModule } from '@angular/core';
-
+import { createCustomElement } from '@angular/elements';
+import { BrowserModule } from '@angular/platform-browser';
+import { environmentModules } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { EntryComponent } from './entry.component';
-import { createCustomElement } from '@angular/elements';
-import { ChildPageComponent } from './child-page.component';
-import { MainPageComponent } from './main-page.component';
 import { MicroFrontendComponent } from './micro-frontend.component';
 
 @NgModule({
-  declarations: [
-    EntryComponent,
-    ChildPageComponent,
-    MainPageComponent,
-    MicroFrontendComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [EntryComponent, MicroFrontendComponent],
+  imports: [BrowserModule, environmentModules, AppRoutingModule],
   providers: [],
 })
 export class AppModule {

@@ -7,8 +7,8 @@ import {
   Output,
 } from '@angular/core';
 import {
-  EntryZoneService,
   EntryRoutingService,
+  EntryZoneService,
   RouterEvent,
 } from 'ngx-elements-router';
 import { Observable, Subject, Subscription } from 'rxjs';
