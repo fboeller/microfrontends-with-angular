@@ -31,6 +31,14 @@
             "scripts": ["node_modules/ngx-elements-router/src/dev-platform.js"]
           },
           "configurations": {
+            "local-web-components": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/bookings/src/environments/environment.ts",
+                  "with": "projects/bookings/src/environments/environment.local-web-components.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -141,7 +149,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "train-platform:build"
+            "browserTarget": "train-platform:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
