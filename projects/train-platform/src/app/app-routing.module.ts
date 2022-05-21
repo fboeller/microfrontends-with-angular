@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'bookings',
     canActivate: [LoadBundleGuard],
     data: {
-      bundleUrl: 'http://localhost:4201/main-es5.js', // TODO: configure prod url.
+      bundleUrl: 'http://localhost:4201/main-es2015.js', // TODO: configure prod url.
     },
     loadChildren: () =>
       import('./micro-frontend-host/micro-frontend-host.module').then(
