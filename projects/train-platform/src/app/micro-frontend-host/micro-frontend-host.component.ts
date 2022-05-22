@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-host',
   template: `
     <mf-bookings-entry
-      aerRouting
+      microFrontendRouting
       microFrontendZone
       microFrontendLanguage
     ></mf-bookings-entry>
