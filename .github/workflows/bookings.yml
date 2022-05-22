@@ -1,10 +1,6 @@
-name: CI
+name: Bookings
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 
 jobs:
   build:
@@ -19,20 +15,23 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
 
+      - name: Get Node.js version
+        id: nodejs
+        run: echo ::set-output name=nodeVersion::$(cat .node-version)
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.nodejs.outputs.nodeVersion }}
 
       - name: Install npm packages
-        run: npm install
+        run: npm ci
 
       - name: Build
-        run: npm run build -- --prod
+        run: npm run build bookings -- --prod
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint bookings
 
       - name: Test
-        run: npm run test
-
-      - name: Prettier
-        run: npm run prettier-check
+        run: npm run test bookings
