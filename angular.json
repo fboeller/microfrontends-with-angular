@@ -27,8 +27,7 @@
               "projects/bookings/src/favicon.ico",
               "projects/bookings/src/assets"
             ],
-            "styles": ["projects/bookings/src/styles.css"],
-            "scripts": ["projects/bookings/src/dev-platform/dev-platform.js"]
+            "styles": ["projects/bookings/src/styles.css"]
           },
           "configurations": {
             "local-web-components": {
