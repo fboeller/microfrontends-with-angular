@@ -1,9 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BookingModule } from './booking/booking.module';
 import { EntryComponent } from './micro-frontend-entry/entry.component';
@@ -11,10 +7,6 @@ import { NoComponent } from './micro-frontend-entry/no.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
     RouterModule.forRoot([{ path: '**', component: NoComponent }]),
     BookingModule,
   ],
