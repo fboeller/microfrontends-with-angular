@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../app/translation-loader.provider';
 
 @Component({
+  selector: 'dev-platform-navbar',
   templateUrl: './dev-platform-navbar.component.html',
 })
 export class DevPlatformNavbarComponent {

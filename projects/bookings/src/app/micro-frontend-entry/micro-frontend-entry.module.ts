@@ -7,7 +7,7 @@ import { NoopLocationStrategy } from './noop-location-strategy';
 
 @NgModule({
   declarations: [EntryComponent, NoComponent],
-  imports: [RouterModule.forChild([{ path: '**', component: NoComponent }])],
+  imports: [RouterModule.forChild([])],
   providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
 })
 export class MicroFrontendEntryModule {}
