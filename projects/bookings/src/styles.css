@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: unset;
+}
+
+
 button {
   background-color: #008cba;
   border: none;

@@ -1,3 +1,18 @@
+:host {
+  --background-color: white;
+  --font-color: black;
+  display: block;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  height: 100vh;
+  padding: 8px;
+}
+
+:host.dark {
+  --background-color: black;
+  --font-color: white;
+}
+
 nav {
   height: 40px;
   width: 100%;
