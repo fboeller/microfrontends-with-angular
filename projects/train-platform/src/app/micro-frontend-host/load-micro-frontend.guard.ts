@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
-import { BundleRegistryService } from 'ngx-elements-router';
+import { MicroFrontendRegistryService } from './micro-frontend-registry.service';
 
 @Injectable({ providedIn: 'root' })
 export class LoadMicroFrontendGuard implements CanActivate {
-  constructor(private bundleRegistryService: BundleRegistryService) {}
+  constructor(
+    private microFrontendRegistryService: MicroFrontendRegistryService
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot): Promise<boolean> {
     const bundleUrl = route.data.bundleUrl as unknown;
@@ -15,6 +17,6 @@ export class LoadMicroFrontendGuard implements CanActivate {
       `);
       return Promise.resolve(false);
     }
-    return this.bundleRegistryService.loadBundle(bundleUrl);
+    return this.microFrontendRegistryService.loadBundle(bundleUrl);
   }
 }
