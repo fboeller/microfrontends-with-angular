@@ -26,22 +26,22 @@ $ npm run ng run bookings:build:local-web-components && npx http-server dist/boo
 ### Local
 
 - Platform: Off
-- Microfrontend: http://localhost:4200/
+- Microfrontend: `http://localhost:4200/`
 - Platform-Translations: Off
-- Microfrontend-Translations: http://localhost:4200/assets/i18n/<lang>.json
+- Microfrontend-Translations: `http://localhost:4200/assets/i18n/<lang>.json`
 
 ### Production
 
-- Platform: https://my.domain.net/
-- Microfrontend: https://my.domain.net/frontends/<frontend>/
-- Platform-Translations: https://my.domain.net/assets/i18n/<lang>.json
-- Microfrontend-Translations: https://my.domain.net/frontends/<frontend>/assets/i18n/<lang>.json
+- Platform: `https://my.domain.net/`
+- Microfrontend: `https://my.domain.net/frontends/<frontend>/`
+- Platform-Translations: `https://my.domain.net/assets/i18n/<lang>.json`
+- Microfrontend-Translations: `https://my.domain.net/frontends/<frontend>/assets/i18n/<lang>.json`
 
 ### Local Web Components
 
-Redirect: http://localhost:4200/frontends/<frontend>/ -> http://localhost:4201/
+Redirect: `http://localhost:4200/frontends/<frontend>/` -> `http://localhost:4201/`
 
-- Platform: http://localhost:4200/
-- Microfrontend: http://localhost:4201/
-- Platform-Translations: http://localhost:4200/assets/i18n/<lang>.json
-- Microfrontend-Translations: http://localhost:4201/assets/i18n/<lang>.json
+- Platform: `http://localhost:4200/`
+- Microfrontend: `http://localhost:4201/`
+- Platform-Translations: `http://localhost:4200/assets/i18n/<lang>.json`
+- Microfrontend-Translations: `http://localhost:4201/assets/i18n/<lang>.json`
