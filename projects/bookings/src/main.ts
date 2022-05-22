@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { EmbeddedMicroFrontendModule } from './app/embedded-micro-frontend.module';
+import { MicroFrontendModule } from './micro-frontend/micro-frontend.module';
 import { BookingsDevPlatformModule } from './dev-platform/bookings-dev-platform.module';
 import { environment } from './environments/environment';
 
@@ -10,7 +10,7 @@ if (environment.production) {
 
 const bootstrapModule = !environment.production
   ? BookingsDevPlatformModule
-  : EmbeddedMicroFrontendModule;
+  : MicroFrontendModule;
 
 platformBrowserDynamic()
   .bootstrapModule(bootstrapModule)

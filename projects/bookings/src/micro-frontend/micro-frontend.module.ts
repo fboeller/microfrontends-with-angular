@@ -2,10 +2,10 @@ import { LocationStrategy } from '@angular/common';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { RouterModule } from '@angular/router';
-import { BookingModule } from './booking/booking.module';
-import { EntryComponent } from './micro-frontend-entry/entry.component';
-import { NoComponent } from './micro-frontend-entry/no.component';
-import { NoopLocationStrategy } from './micro-frontend-entry/noop-location-strategy';
+import { BookingModule } from '../app/booking/booking.module';
+import { EntryComponent } from './entry.component';
+import { NoComponent } from './no.component';
+import { NoopLocationStrategy } from './noop-location-strategy';
 
 @NgModule({
   declarations: [EntryComponent, NoComponent],
@@ -15,7 +15,7 @@ import { NoopLocationStrategy } from './micro-frontend-entry/noop-location-strat
   ],
   providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
 })
-export class EmbeddedMicroFrontendModule {
+export class MicroFrontendModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap(): void {
