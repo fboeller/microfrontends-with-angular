@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
-import { MicroFrontendEntryModule } from '../micro-frontend-entry/micro-frontend-entry.module';
 import { TranslationLoaderProvider } from '../translation-loader.provider';
 import { BookingComponent } from './booking.component';
 
@@ -23,7 +22,6 @@ import { BookingComponent } from './booking.component';
         component: BookingComponent,
       },
     ]),
-    MicroFrontendEntryModule,
     HotToastModule.forRoot(),
     TranslateModule.forRoot({
       loader: TranslationLoaderProvider,
