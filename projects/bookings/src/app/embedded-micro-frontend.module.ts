@@ -11,7 +11,7 @@ import { NoComponent } from './micro-frontend-entry/no.component';
     BookingModule,
   ],
 })
-export class EmbeddedModule {
+export class EmbeddedMicroFrontendModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap(): void {
