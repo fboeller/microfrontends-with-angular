@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
 import { MicroFrontendHostComponent } from './micro-frontend-host.component';
 import { MicrofrontendLanguageDirective as MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
 import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
@@ -8,6 +9,10 @@ import { MicrofrontendZoneDirective as MicroFrontendZoneDirective } from './micr
 const routes: Routes = [
   {
     path: '**',
+    canActivate: [LoadMicroFrontendGuard],
+    data: {
+      bundleUrl: 'http://localhost:4201/main-es2015.js', // TODO: configure prod url.
+    },
     component: MicroFrontendHostComponent,
   },
 ];
