@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { BookingService } from '../booking.service';
 
 @Component({
@@ -9,9 +11,10 @@ import { BookingService } from '../booking.service';
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
 })
-export class BookingComponent {
+export class BookingComponent implements OnInit {
   reserveSeat = false;
   firstClass = false;
+  journeyId$!: Observable<string>;
 
   constructor(
     private bookingService: BookingService,
@@ -19,6 +22,13 @@ export class BookingComponent {
     private toast: HotToastService,
     private translateService: TranslateService
   ) {}
+
+  ngOnInit(): void {
+    this.journeyId$ = this.route.params.pipe(
+      map((params) => params.journeyId),
+      filter((journeyId) => journeyId)
+    );
+  }
 
   book(): void {
     this.bookingService

@@ -23,7 +23,7 @@ import { TranslationLoaderProvider } from './translation-loader.provider';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'bookings/journey/:id',
+        path: 'bookings/journey/:journeyId',
         component: BookingComponent,
       },
       { path: '**', component: NoComponent },
