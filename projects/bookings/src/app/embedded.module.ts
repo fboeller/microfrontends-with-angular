@@ -5,7 +5,6 @@ import { createCustomElement } from '@angular/elements';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { BookingModule } from './booking/booking.module';
 import { EntryComponent } from './micro-frontend-entry/entry.component';
 import { NoComponent } from './micro-frontend-entry/no.component';
@@ -17,7 +16,6 @@ import { NoComponent } from './micro-frontend-entry/no.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([{ path: '**', component: NoComponent }]),
-    TranslateModule.forChild(),
     BookingModule,
   ],
 })

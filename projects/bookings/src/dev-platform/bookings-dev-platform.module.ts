@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { DoBootstrap, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { BookingModule } from '../app/booking/booking.module';
 import { DevPlatformNavbarComponent } from './dev-platform-navbar/dev-platform-navbar.component';
 import { DevPlatformPageComponent } from './dev-platform-page/dev-platform-page.component';
@@ -19,7 +18,6 @@ import { DevPlatformPageComponent } from './dev-platform-page/dev-platform-page.
         component: DevPlatformPageComponent,
       },
     ]),
-    TranslateModule.forChild(),
     BookingModule,
   ],
   bootstrap: [DevPlatformNavbarComponent],
