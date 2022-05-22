@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
+import { BookingsDevPlatformModule } from '../dev-platform/bookings-dev-platform.module';
+import { environment, environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
 import { EntryComponent } from './micro-frontend-entry/entry.component';
 import { MicroFrontendEntryModule } from './micro-frontend-entry/micro-frontend-entry.module';
