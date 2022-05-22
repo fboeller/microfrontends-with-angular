@@ -3,7 +3,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
-type Language = 'en' | 'de';
+export type Language = 'en' | 'de';
 
 class TranslateHttpLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}

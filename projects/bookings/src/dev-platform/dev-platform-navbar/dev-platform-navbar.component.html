@@ -1,0 +1,17 @@
+<nav>
+    <ul>
+      <li>
+        <a routerLink="/">Home</a>
+      </li>
+    </ul>
+    <div class="page-options">
+      <div>
+        <label>Language:</label>
+        <select [ngModel]="language" (ngModelChange)="updateLanguage($event)">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+  

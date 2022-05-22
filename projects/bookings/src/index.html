@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- This index.html is only used for development purposes, as the bookings app is included as a web-component via its main.js. -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     <script src="scripts.js"></script>
   </head>
   <body>
+    <dev-platform-navbar></dev-platform-navbar>
     <div id="router-outlet"></div>
     <script>
       registerRouting("/", "mf-bookings-entry");

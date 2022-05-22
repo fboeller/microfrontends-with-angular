@@ -5,16 +5,18 @@ import {
   OnChanges,
   OnDestroy,
   Output,
+  SimpleChanges,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
   EntryRoutingService,
   EntryZoneService,
   RouterEvent,
 } from 'ngx-elements-router';
 import { Observable, Subject, Subscription } from 'rxjs';
+import { Language } from '../translation-loader.provider';
 
 @Component({
-  selector: 'mf-angular-entry',
   template: `<router-outlet></router-outlet>`,
 })
 export class EntryComponent implements OnChanges, OnDestroy {
@@ -25,11 +27,14 @@ export class EntryComponent implements OnChanges, OnDestroy {
   @Input() microtaskEmpty$?: Observable<void>;
   microtaskEmpty$$ = new Subject<Observable<void>>();
 
+  @Input() language?: Language;
+
   private readonly subscription: Subscription;
 
   constructor(
     private entryRoutingService: EntryRoutingService,
-    private entryZoneService: EntryZoneService
+    private entryZoneService: EntryZoneService,
+    private translateService: TranslateService
   ) {
     const routingSubscription = this.entryRoutingService.registerRouting(
       this.routeChange,
@@ -39,14 +44,19 @@ export class EntryComponent implements OnChanges, OnDestroy {
       this.microtaskEmpty$$
     );
     this.subscription = routingSubscription.add(zoneSubscription);
+    this.translateService.setDefaultLang('en'); // TODO: check if this is needed
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnChanges(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    // TODO: consider only emitting when specific input changed.
     this.route$.next(this.route);
     this.microtaskEmpty$$.next(this.microtaskEmpty$);
+    if (changes.language && this.language) {
+      this.translateService.use(this.language);
+    }
   }
 }

@@ -8,9 +8,10 @@ import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoComponent, NoopLocationStrategy } from 'ngx-elements-router';
-import { environmentModules } from '../environments/environment';
+import { BookingsDevPlatformModule } from '../dev-platform/bookings-dev-platform.module';
+import { environment, environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
-import { EntryComponent } from './entry.component';
+import { EntryComponent } from './micro-frontend-entry/entry.component';
 import { TranslationLoaderProvider } from './translation-loader.provider';
 
 @NgModule({
@@ -46,5 +47,8 @@ export class BookingModule {
     });
     window.customElements.define('mf-bookings-entry', customElement);
     console.log(`Defined the custom element 'mf-bookings-entry'`);
+    if (!environment.production) {
+      BookingsDevPlatformModule.createDevPlatformNavbarElement(this.injector);
+    }
   }
 }
