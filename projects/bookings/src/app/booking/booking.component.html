@@ -1,4 +1,4 @@
-<h2>Booking Journey {{ journeyId$ | async }}</h2>
+<h2 *ngIf="journeyId$ | async as journeyId">{{ "booking.title" | translate: { id: journeyId } }} </h2>
 <div class="booking-options">
   <div>
     <label>{{ "booking.reserveSeatQuestion" | translate }}</label>
