@@ -1,13 +1,13 @@
-import { CommonModule, LocationStrategy } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { DoBootstrap, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BookingModule } from '../app/booking/booking.module';
-import { DevPlatformNavbarComponent } from './dev-platform-navbar/dev-platform-navbar.component';
 import { DevPlatformPageComponent } from './dev-platform-page/dev-platform-page.component';
+import { DevPlatformComponent } from './dev-platform/dev-platform.component';
 
 @NgModule({
-  declarations: [DevPlatformPageComponent, DevPlatformNavbarComponent],
+  declarations: [DevPlatformComponent, DevPlatformPageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,8 +20,8 @@ import { DevPlatformPageComponent } from './dev-platform-page/dev-platform-page.
     ]),
     BookingModule,
   ],
-  bootstrap: [DevPlatformNavbarComponent],
+  bootstrap: [DevPlatformComponent],
 })
-export class BookingsDevPlatformModule implements DoBootstrap {
+export class DevPlatformModule implements DoBootstrap {
   ngDoBootstrap(): void {}
 }
