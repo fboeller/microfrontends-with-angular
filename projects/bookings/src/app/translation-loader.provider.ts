@@ -1,28 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { MICRO_FRONTEND_URL } from './microfrontend-url.token';
+import { environment } from '../environments/environment';
+
+type Language = 'en' | 'de';
 
 class TranslateHttpLoader implements TranslateLoader {
-  constructor(
-    private http: HttpClient,
-    private assetUrl: string,
-    private translationFile: (language: 'en' | 'de') => string
-  ) {}
-  getTranslation(language: 'en' | 'de'): Observable<any> {
-    const path = `${this.assetUrl}${this.translationFile(
-      language
-    )}?t=${new Date().getTime()}`;
-    console.log(path, 'HALLO');
+  constructor(private http: HttpClient) {}
+  getTranslation(language: Language): Observable<any> {
+    const cacheBusting = new Date().getTime();
+    const path = `${environment.assetUrl}/assets/i18n/${language}.json?t=${cacheBusting}`;
     return this.http.get(path);
   }
 }
 
-export const provideTranslateLoader = (
-  translationFile: (language: 'en' | 'de') => string
-) => ({
+export const TranslationLoaderProvider = {
   provide: TranslateLoader,
-  useFactory: (http: HttpClient, assetUrl: string) =>
-    new TranslateHttpLoader(http, assetUrl, translationFile),
-  deps: [HttpClient, MICRO_FRONTEND_URL],
-});
+  useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
+  deps: [HttpClient],
+};

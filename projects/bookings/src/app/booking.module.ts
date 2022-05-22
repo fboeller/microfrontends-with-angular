@@ -8,11 +8,10 @@ import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoComponent, NoopLocationStrategy } from 'ngx-elements-router';
-import { environment, environmentModules } from '../environments/environment';
+import { environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
 import { EntryComponent } from './entry.component';
-import { MICRO_FRONTEND_URL } from './microfrontend-url.token';
-import { provideTranslateLoader } from './translation-loader.provider';
+import { TranslationLoaderProvider } from './translation-loader.provider';
 
 @NgModule({
   declarations: [EntryComponent, BookingComponent],
@@ -31,16 +30,13 @@ import { provideTranslateLoader } from './translation-loader.provider';
     environmentModules,
     HotToastModule.forRoot(),
     TranslateModule.forRoot({
-      loader: provideTranslateLoader(
-        (language) => `/assets/i18n/${language}.json`
-      ),
+      loader: TranslationLoaderProvider,
       defaultLanguage: 'en',
     }),
   ],
   exports: [BookingComponent],
   providers: [
-    { provide: LocationStrategy, useClass: NoopLocationStrategy },
-    { provide: MICRO_FRONTEND_URL, useValue: environment.assetUrl },
+    { provide: LocationStrategy, useClass: NoopLocationStrategy }
   ],
 })
 export class BookingModule {
