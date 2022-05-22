@@ -11,11 +11,6 @@
     "check": "npm run lint && npm run test && npm run prettier-check",
     "package": "npm run build-lib && npm run npm-pack"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check"
-    }
-  },
   "jest": {
     "roots": [
       "<rootDir>/projects/train-platform/src",
@@ -66,7 +61,6 @@
     "@types/jest": "^26.0.15",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
-    "husky": "^4.3.0",
     "jest": "^26.6.3",
     "ng-packagr": "^11.1.2",
     "ngx-build-plus": "^11.0.0",
