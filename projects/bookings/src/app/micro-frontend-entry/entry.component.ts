@@ -11,10 +11,24 @@ import {
 } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { RouterEvent } from 'ngx-elements-router';
 import { EMPTY, Observable, Subject, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Language } from '../translation-loader.provider';
+
+/**
+ * An event sent from the micro frontend to the platform to indicate that the route within the micro frontend has changed.
+ */
+export interface RouterEvent {
+  /**
+   * The new absolute url without the base href, e.g. `/micro-frontend/child`.
+   */
+  url: string;
+  /**
+   * If the new url is replacing the current url or if this url is a new entry in the browser history.
+   * A replace is used for redirects.
+   */
+  replaceUrl: boolean;
+}
 
 @Component({
   template: `<router-outlet></router-outlet>`,
