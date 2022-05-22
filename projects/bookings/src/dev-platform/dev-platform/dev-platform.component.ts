@@ -5,6 +5,7 @@ import { Language } from '../../app/translation-loader.provider';
 @Component({
   selector: 'dev-platform',
   templateUrl: './dev-platform.component.html',
+  styleUrls: ['./dev-platform.component.css'],
 })
 export class DevPlatformComponent {
   language: Language = 'en';
