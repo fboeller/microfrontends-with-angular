@@ -35,9 +35,7 @@ import { TranslationLoaderProvider } from './translation-loader.provider';
     }),
   ],
   exports: [BookingComponent],
-  providers: [
-    { provide: LocationStrategy, useClass: NoopLocationStrategy }
-  ],
+  providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
 })
 export class BookingModule {
   constructor(private injector: Injector) {}
