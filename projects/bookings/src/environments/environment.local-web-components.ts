@@ -1,4 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
+  embedded: true,
   assetUrl: '/frontends/bookings',
 };

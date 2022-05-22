@@ -8,9 +8,9 @@ if (environment.production) {
   enableProdMode();
 }
 
-const bootstrapModule = !environment.production
-  ? DevPlatformModule
-  : MicroFrontendModule;
+const bootstrapModule = environment.embedded
+  ? MicroFrontendModule
+  : DevPlatformModule;
 
 platformBrowserDynamic()
   .bootstrapModule(bootstrapModule)
