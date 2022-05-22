@@ -2,7 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ElementsRouterModule } from 'ngx-elements-router';
 import { MicroFrontendHostComponent } from './micro-frontend-host.component';
-import { MicrofrontendLanguageDirective } from './micro-frontend-language.directive';
+import { MicrofrontendLanguageDirective as MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
+import { MicrofrontendZoneDirective as MicroFrontendZoneDirective } from './micro-frontend-zone.directive';
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MicroFrontendHostComponent, MicrofrontendLanguageDirective],
+  declarations: [
+    MicroFrontendHostComponent,
+    MicroFrontendLanguageDirective,
+    MicroFrontendZoneDirective,
+  ],
   imports: [RouterModule.forChild(routes), ElementsRouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
