@@ -28,7 +28,7 @@
               "projects/bookings/src/assets"
             ],
             "styles": ["projects/bookings/src/styles.css"],
-            "scripts": ["node_modules/ngx-elements-router/src/dev-platform.js"]
+            "scripts": ["projects/bookings/src/dev-platform/dev-platform.js"]
           },
           "configurations": {
             "local-web-components": {

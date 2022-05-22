@@ -6,9 +6,13 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RouterEvent } from 'ngx-elements-router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+
+export interface RouterEvent {
+  url: string;
+  replaceUrl: boolean;
+}
 
 @Directive({
   selector: '[microFrontendRouting]',

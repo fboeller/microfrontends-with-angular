@@ -1,4 +1,4 @@
-import { CommonModule, LocationStrategy } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
@@ -7,15 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
-import { NoComponent, NoopLocationStrategy } from 'ngx-elements-router';
-import { BookingsDevPlatformModule } from '../dev-platform/bookings-dev-platform.module';
-import { environment, environmentModules } from '../environments/environment';
 import { BookingComponent } from './booking/booking.component';
 import { EntryComponent } from './micro-frontend-entry/entry.component';
+import { MicroFrontendEntryModule } from './micro-frontend-entry/micro-frontend-entry.module';
 import { TranslationLoaderProvider } from './translation-loader.provider';
 
 @NgModule({
-  declarations: [EntryComponent, BookingComponent],
+  declarations: [BookingComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -26,9 +24,9 @@ import { TranslationLoaderProvider } from './translation-loader.provider';
         path: 'bookings/journey/:journeyId',
         component: BookingComponent,
       },
-      { path: '**', component: NoComponent },
     ]),
     environmentModules,
+    MicroFrontendEntryModule,
     HotToastModule.forRoot(),
     TranslateModule.forRoot({
       loader: TranslationLoaderProvider,
@@ -36,7 +34,6 @@ import { TranslationLoaderProvider } from './translation-loader.provider';
     }),
   ],
   exports: [BookingComponent],
-  providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
 })
 export class BookingModule {
   constructor(private injector: Injector) {}
