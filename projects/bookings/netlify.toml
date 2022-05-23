@@ -1,0 +1,3 @@
+[build]
+publish = "dist/bookings"
+command = "npm run build bookings --prod"

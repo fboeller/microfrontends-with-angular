@@ -1,0 +1,8 @@
+[build]
+publish = "dist/train-platform"
+command = "npm run build train-platform --prod"
+
+[[redirects]]
+from = "/frontends/bookings/*"
+to = "https://curious-bublanina-10c9c8.netlify.app/:splat"
+force = true
