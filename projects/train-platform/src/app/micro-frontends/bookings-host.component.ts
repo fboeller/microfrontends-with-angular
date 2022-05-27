@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-host',
+  selector: 'app-bookings-host',
   template: `
     <mf-bookings-entry
       microFrontendRouting
