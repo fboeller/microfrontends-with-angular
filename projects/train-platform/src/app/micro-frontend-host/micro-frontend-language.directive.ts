@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { map, startWith, takeUntil } from 'rxjs/operators';
 
 @Directive({
-  selector: '[microFrontendLanguage]',
+  selector: '[microFrontendLanguage]', // eslint-disable-line directive-selector
 })
 export class MicrofrontendLanguageDirective implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
@@ -14,7 +14,7 @@ export class MicrofrontendLanguageDirective implements OnInit, OnDestroy {
     private translateService: TranslateService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.translateService.onLangChange
       .pipe(
         map((event) => event.lang),
@@ -28,7 +28,7 @@ export class MicrofrontendLanguageDirective implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.destroyed$.next();
   }
 }
