@@ -75,60 +75,6 @@ graph TB
     n13-->n15
 ```
 
-### Main page
-No microfrontend is loaded on this page.
-
-```mermaid
-    graph TB
-        subgraph "Shell app"
-            n7(app-root)
-            n8(app-navbar)
-            n9(app-journey-selection)
-            n7-->n8
-            n7-->n9
-        end
-```
-
-### Booking form page
-This diagram shows all the Angular components that are rendered on the booking form page and illustrates which components are exposed by the shell application and which by the bookings microfrontend.
-
-```mermaid
-    graph TB
-        subgraph "Shell app"
-            n10(app-root)
-            n11(app-navbar)
-            n12(app-bookings-host)
-        end
-        subgraph "Microfrontend"
-            n13(mf-bookings-entry)
-            n14(mf-booking-form)
-        end
-        n10-->n11
-        n10-->n12
-        n12-->n13
-        n13-->n14
-```
-
-### My bookings page
-This diagram shows all the Angular components that are rendered on the booking form page and illustrates which components are exposed by the shell application and which by the bookings microfrontend.
-
-```mermaid
-    graph TB
-        subgraph "Shell app"
-            n10(app-root)
-            n11(app-navbar)
-            n12(app-bookings-host)
-        end
-        subgraph "Microfrontend"
-            n13(mf-bookings-entry)
-            n14(mf-booking-form)
-        end
-        n10-->n11
-        n10-->n12
-        n12-->n13
-        n13-->n14
-```
-
 ### User clicks on "Book" of Journey 1
 ```mermaid
 sequenceDiagram
