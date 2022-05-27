@@ -128,3 +128,43 @@ This diagram shows all the Angular components that are rendered on the booking f
         n12-->n13
         n13-->n14
 ```
+
+### User clicks on "Book" of Journey 1
+```mermaid
+sequenceDiagram
+    actor user
+    participant trainPlatform as TrainPlatform
+    participant windowUrl as window.url
+    participant bookings as Bookings
+    user->>trainPlatform: Click on "Book" of Journey 1
+    trainPlatform->>windowUrl: Set url "bookings/journey/1
+    trainPlatform->>bookings: Pass "bookings/journey/1" url as input
+    bookings->>user: Render booking-form
+```
+### User clicks on "Special Offer" from "My bookings"
+```mermaid
+sequenceDiagram
+    actor user
+    participant trainPlatform as TrainPlatform
+    participant windowUrl as window.url
+    participant bookings as Bookings
+    user->>bookings: Click on "special offer"
+    bookings->>trainPlatform: Pass url "/bookings/journey/42" via component output
+    trainPlatform->>windowUrl: Set url to "/bookings/journey/42"
+    trainPlatform->>bookings: Pass url "/bookings/journey/42" via component input
+    bookings->>user: Render journey 42
+```
+
+### User clicks on "Special offer" from "My bookings"
+```mermaid
+sequenceDiagram
+    actor user
+    participant trainPlatform as TrainPlatform
+    participant windowUrl as window.url
+    participant bookings as Bookings
+    user->>bookings: Click on "Special offer" from "My bookings"
+    bookings->>trainPlatform: Pass url "/bookings/journey/42" via component output 
+    trainPlatform->>windowUrl: Set url to "/bookings/journey/42"
+    trainPlatform->>bookings: Pass "/bookings/journey/42" url as input
+    bookings->>user: Render special offer journey 42
+```
