@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../theme.service';
 
@@ -12,6 +13,7 @@ export class NavbarComponent {
   theme: 'light' | 'dark' = 'light';
 
   constructor(
+    private toastService: HotToastService,
     private translateService: TranslateService,
     private themeService: ThemeService
   ) {}
@@ -24,5 +26,9 @@ export class NavbarComponent {
   updateLanguage(lang: 'en' | 'de'): void {
     this.language = lang;
     this.translateService.use(lang);
+  }
+
+  showToast() {
+    this.toastService.success('Choo choo!');
   }
 }
