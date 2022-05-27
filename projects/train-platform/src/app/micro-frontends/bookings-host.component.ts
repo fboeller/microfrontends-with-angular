@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   template: `
     <mf-bookings-entry
       microFrontendRouting
-      microFrontendZone
       microFrontendLanguage
     ></mf-bookings-entry>
   `,

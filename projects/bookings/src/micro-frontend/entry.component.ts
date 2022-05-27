@@ -1,9 +1,7 @@
 import {
-  ApplicationRef,
   Component,
   EventEmitter,
   Input,
-  NgZone,
   OnChanges,
   OnDestroy,
   Output,
@@ -11,8 +9,7 @@ import {
 } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { EMPTY, Observable, Subject, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { Language } from '../app/translation-loader.provider';
 
 /**
@@ -45,14 +42,11 @@ export class EntryComponent implements OnChanges, OnDestroy {
   private readonly subscription: Subscription;
 
   constructor(
-    private zone: NgZone,
-    private applicationRef: ApplicationRef,
     private router: Router,
     private translateService: TranslateService
   ) {
     const routingSubscription = this.registerOutgoingRouting();
-    const zoneSubscription = this.registerZone();
-    this.subscription = routingSubscription.add(zoneSubscription);
+    this.subscription = routingSubscription;
   }
 
   ngOnDestroy(): void {
@@ -91,21 +85,5 @@ export class EntryComponent implements OnChanges, OnDestroy {
 
   private isRedirect(event: RoutesRecognized): boolean {
     return event.url !== event.urlAfterRedirects;
-  }
-
-  /**
-   * TODO: find concrete example to demonstrate why this is needed for the video.
-   * The shell application and the microfrontend share the same window.Zone object.
-   * By manually calling ApplicationRef.tick() on MicroTaskEmpty events in the shell application,
-   * we make sure that no change detection cycle is skipped inside a microfrontend.
-   */
-  private registerZone(): Subscription {
-    return this.microtaskEmpty$$
-      .pipe(switchMap((microtaskEmpty$) => microtaskEmpty$ ?? EMPTY))
-      .subscribe(() => {
-        this.zone.run(() => {
-          this.applicationRef.tick();
-        });
-      });
   }
 }

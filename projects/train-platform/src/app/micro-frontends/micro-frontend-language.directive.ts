@@ -7,7 +7,7 @@ import { map, startWith, takeUntil } from 'rxjs/operators';
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[microFrontendLanguage]',
 })
-export class MicrofrontendLanguageDirective implements OnInit, OnDestroy {
+export class MicroFrontendLanguageDirective implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
 
   constructor(

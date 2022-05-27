@@ -3,9 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { BookingsHostComponent } from './bookings-host.component';
 import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
-import { MicrofrontendLanguageDirective as MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
+import { MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
 import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
-import { MicrofrontendZoneDirective as MicroFrontendZoneDirective } from './micro-frontend-zone.directive';
 
 const getMicrofrontendBundleUrl = (frontendName: 'bookings') =>
   `/frontends/${frontendName}/main.js`;
@@ -28,7 +27,6 @@ const routes: Routes = [
     BookingsHostComponent,
     MicroFrontendLanguageDirective,
     MicroFrontendRoutingDirective,
-    MicroFrontendZoneDirective,
   ],
   imports: [RouterModule.forChild(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
