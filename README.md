@@ -48,3 +48,83 @@ Redirect: `http://localhost:4200/frontends/<frontend>/` -> `http://localhost:420
 - Microfrontend: `http://localhost:4201/`
 - Platform-Translations: `http://localhost:4200/assets/i18n/<lang>.json`
 - Microfrontend-Translations: `http://localhost:4201/assets/i18n/<lang>.json`
+
+
+## Fancy diagrams
+
+### Component hierarchies
+
+```mermaid
+graph TB
+    subgraph "Shell app"
+        n7(app-root)
+        n8(app-navbar)
+        n9(app-journey-selection)
+        n10(app-bookings-host)
+        n7-->n8
+        n7-->n9
+        n7-->n10
+    end
+    subgraph "Microfrontend"
+        n13(mf-bookings-entry)
+        n14(mf-booking-form)
+        n15(mf-booking-list)
+    end
+    n13-->n14
+    n10-->n13
+    n13-->n15
+```
+
+### Main page
+No microfrontend is loaded on this page.
+
+```mermaid
+    graph TB
+        subgraph "Shell app"
+            n7(app-root)
+            n8(app-navbar)
+            n9(app-journey-selection)
+            n7-->n8
+            n7-->n9
+        end
+```
+
+### Booking form page
+This diagram shows all the Angular components that are rendered on the booking form page and illustrates which components are exposed by the shell application and which by the bookings microfrontend.
+
+```mermaid
+    graph TB
+        subgraph "Shell app"
+            n10(app-root)
+            n11(app-navbar)
+            n12(app-bookings-host)
+        end
+        subgraph "Microfrontend"
+            n13(mf-bookings-entry)
+            n14(mf-booking-form)
+        end
+        n10-->n11
+        n10-->n12
+        n12-->n13
+        n13-->n14
+```
+
+### My bookings page
+This diagram shows all the Angular components that are rendered on the booking form page and illustrates which components are exposed by the shell application and which by the bookings microfrontend.
+
+```mermaid
+    graph TB
+        subgraph "Shell app"
+            n10(app-root)
+            n11(app-navbar)
+            n12(app-bookings-host)
+        end
+        subgraph "Microfrontend"
+            n13(mf-bookings-entry)
+            n14(mf-booking-form)
+        end
+        n10-->n11
+        n10-->n12
+        n12-->n13
+        n13-->n14
+```
