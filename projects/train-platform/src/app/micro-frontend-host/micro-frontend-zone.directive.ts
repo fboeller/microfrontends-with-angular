@@ -1,7 +1,7 @@
 import { Directive, ElementRef, NgZone, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[microFrontendZone]',
+  selector: '[microFrontendZone]', // eslint-disable-line directive-selector
 })
 export class MicrofrontendZoneDirective implements OnInit {
   constructor(private element: ElementRef, private zone: NgZone) {}

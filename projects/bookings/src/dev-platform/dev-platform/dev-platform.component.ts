@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../app/translation-loader.provider';
 
 @Component({
-  selector: 'dev-platform',
+  selector: 'mf-dev-platform',
   templateUrl: './dev-platform.component.html',
   styleUrls: ['./dev-platform.component.css'],
 })
