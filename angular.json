@@ -17,7 +17,7 @@
           "options": {
             "singleBundle": true,
             "outputHashing": "none",
-            "outputPath": "dist/bookings",
+            "outputPath": "projects/bookings/dist",
             "index": "projects/bookings/src/index.html",
             "main": "projects/bookings/src/main.ts",
             "polyfills": "projects/bookings/src/polyfills.ts",
@@ -102,7 +102,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/train-platform",
+            "outputPath": "projects/train-platform/dist",
             "index": "projects/train-platform/src/index.html",
             "main": "projects/train-platform/src/main.ts",
             "polyfills": "projects/train-platform/src/polyfills.ts",

@@ -1,5 +1,5 @@
 [build]
-publish = "dist/train-platform"
+publish = "dist"
 command = "npm run build train-platform --prod"
 
 [[redirects]]
