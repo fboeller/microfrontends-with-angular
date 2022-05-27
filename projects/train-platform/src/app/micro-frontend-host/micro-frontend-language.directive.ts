@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { map, startWith, takeUntil } from 'rxjs/operators';
 
 @Directive({
-  selector: '[microFrontendLanguage]', // eslint-disable-line directive-selector
+  selector: '[microFrontendLanguage]', // // tslint:disable-next-line:directive-selector
 })
 export class MicrofrontendLanguageDirective implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();

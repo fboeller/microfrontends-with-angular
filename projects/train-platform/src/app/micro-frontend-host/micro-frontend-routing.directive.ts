@@ -15,7 +15,7 @@ export interface RouterEvent {
 }
 
 @Directive({
-  selector: '[microFrontendRouting]', // eslint-disable-line directive-selector
+  selector: '[microFrontendRouting]', // tslint:disable-next-line:directive-selector
 })
 export class MicroFrontendRoutingDirective implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
