@@ -6,3 +6,8 @@ command = "npm ci && npm run build train-platform -- --prod"
 from = "/frontends/bookings/*"
 to = "https://curious-bublanina-10c9c8.netlify.app/:splat"
 force = true
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
