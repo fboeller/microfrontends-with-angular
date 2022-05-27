@@ -23,6 +23,9 @@
             "polyfills": "projects/bookings/src/polyfills.ts",
             "tsConfig": "projects/bookings/tsconfig.app.json",
             "aot": true,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "optimization": false,
             "assets": [
               "projects/bookings/src/favicon.ico",
               "projects/bookings/src/assets"
@@ -115,6 +118,9 @@
             "polyfills": "projects/train-platform/src/polyfills.ts",
             "tsConfig": "projects/train-platform/tsconfig.app.json",
             "aot": true,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "optimization": false,
             "assets": [
               "projects/train-platform/src/favicon.ico",
               "projects/train-platform/src/assets"
