@@ -21,7 +21,7 @@ $ npm start train-platform
 ```
 
 ```
-$ npm run ng run bookings:build:local-web-components && npx http-server dist/bookings --port 4201
+$ npm run ng run bookings:build:local-web-components && npx http-server projects/bookings/dist --port 4201
 ```
 
 ## Environments
