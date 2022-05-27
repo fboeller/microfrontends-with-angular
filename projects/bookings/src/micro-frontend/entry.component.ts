@@ -53,7 +53,6 @@ export class EntryComponent implements OnChanges, OnDestroy {
     const routingSubscription = this.registerOutgoingRouting();
     const zoneSubscription = this.registerZone();
     this.subscription = routingSubscription.add(zoneSubscription);
-    this.translateService.setDefaultLang('en'); // TODO: check if this is needed
   }
 
   ngOnDestroy(): void {
