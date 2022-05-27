@@ -6,24 +6,3 @@ a {
   color: unset;
 }
 
-button {
-  background-color: #008cba;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #017ea8;
-}
-
-button:active {
-  background-color: #00678a;
-}
