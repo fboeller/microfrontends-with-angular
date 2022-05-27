@@ -9,6 +9,6 @@ export class BookingService {
     _journeyId: string,
     _options: { reserveSeat: boolean; firstClass: boolean }
   ): Observable<void> {
-    return of((null as unknown) as void);
+    return of(null as unknown as void);
   }
 }

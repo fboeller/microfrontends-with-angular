@@ -1,5 +1,5 @@
 import { LocationStrategy } from '@angular/common';
-import { Injector, NgModule } from '@angular/core';
+import { DoBootstrap, Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { RouterModule } from '@angular/router';
 import { BookingModule } from '../app/booking/booking.module';
@@ -15,7 +15,7 @@ import { NoopLocationStrategy } from './noop-location-strategy';
   ],
   providers: [{ provide: LocationStrategy, useClass: NoopLocationStrategy }],
 })
-export class MicroFrontendModule {
+export class MicroFrontendModule implements DoBootstrap {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap(): void {

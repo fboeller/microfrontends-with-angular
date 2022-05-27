@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { DoBootstrap, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BookingModule } from '../app/booking/booking.module';
@@ -22,6 +22,4 @@ import { DevPlatformComponent } from './dev-platform/dev-platform.component';
   ],
   bootstrap: [DevPlatformComponent],
 })
-export class DevPlatformModule implements DoBootstrap {
-  ngDoBootstrap(): void {}
-}
+export class DevPlatformModule {}

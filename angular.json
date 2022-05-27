@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -95,10 +96,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": ["projects/bookings/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "projects/bookings/**/*.ts",
+              "projects/bookings/**/*.html"
+            ]
           }
         }
       }
@@ -184,10 +187,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": ["projects/train-platform/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "projects/train-platform/**/*.ts",
+              "projects/train-platform/**/*.html"
+            ]
           }
         }
       }
