@@ -18,6 +18,9 @@
             "polyfills": "projects/train-platform/src/polyfills.ts",
             "tsConfig": "projects/train-platform/tsconfig.app.json",
             "aot": true,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "optimization": false,
             "assets": [
               "projects/train-platform/src/favicon.ico",
               "projects/train-platform/src/assets"
@@ -33,7 +36,14 @@
                   "with": "projects/train-platform/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
