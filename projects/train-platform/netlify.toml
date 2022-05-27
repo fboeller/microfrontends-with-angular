@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run build train-platform --prod"
+command = "npm ci && npm run build train-platform --prod"
 
 [[redirects]]
 from = "/frontends/bookings/*"
