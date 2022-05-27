@@ -155,16 +155,16 @@ sequenceDiagram
     bookings->>user: Render journey 42
 ```
 
-### User clicks on "Special offer" from "My bookings"
+### User clicks on "Home" from "My bookings"
 ```mermaid
 sequenceDiagram
     actor user
     participant trainPlatform as TrainPlatform
     participant windowUrl as window.url
     participant bookings as Bookings
-    user->>bookings: Click on "Special offer" from "My bookings"
-    bookings->>trainPlatform: Pass url "/bookings/journey/42" via component output 
-    trainPlatform->>windowUrl: Set url to "/bookings/journey/42"
-    trainPlatform->>bookings: Pass "/bookings/journey/42" url as input
-    bookings->>user: Render special offer journey 42
+    user->>trainPlatform: Click on "Home" from "My bookings"
+    trainPlatform->>windowUrl: Set url to "/"
+    trainPlatform->>bookings: Pass url "/" via component input
+    bookings->>bookings: Set active route to NoComponent
+    trainPlatform->>user: Render home page
 ```
