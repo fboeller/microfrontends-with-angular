@@ -8,7 +8,7 @@ import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directiv
 import { MicrofrontendZoneDirective as MicroFrontendZoneDirective } from './micro-frontend-zone.directive';
 
 const getMicrofrontendBundleUrl = (frontendName: 'bookings') =>
-  `/frontends/${frontendName}/main-es2015.js`;
+  `/frontends/${frontendName}/main.js`;
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
     data: {
       bundleUrl: environment.production
         ? getMicrofrontendBundleUrl('bookings')
-        : 'http://localhost:4201/main-es2015.js',
+        : 'http://localhost:4201/main.js',
     },
     component: MicroFrontendHostComponent,
   },
