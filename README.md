@@ -1,5 +1,5 @@
-[Platform ![Platform Netlify Status](https://api.netlify.com/api/v1/badges/04f71aef-c76d-47a0-8f72-9b619233f98b/deploy-status)](https://app.netlify.com/sites/jolly-cobbler-bab33d/deploys)
-[Microfrontend ![Microfrontend Netlify Status](https://api.netlify.com/api/v1/badges/14649930-1ce6-47c5-8f5c-1da9edd25fd2/deploy-status)](https://app.netlify.com/sites/curious-bublanina-10c9c8/deploys)
+- Platform: [![Netlify Status](https://api.netlify.com/api/v1/badges/04f71aef-c76d-47a0-8f72-9b619233f98b/deploy-status)](https://app.netlify.com/sites/jolly-cobbler-bab33d/deploys)
+- Microfrontend: [![Netlify Status](https://api.netlify.com/api/v1/badges/14649930-1ce6-47c5-8f5c-1da9edd25fd2/deploy-status)](https://app.netlify.com/sites/curious-bublanina-10c9c8/deploys)
 
 # Microfrontends with Angular
 
