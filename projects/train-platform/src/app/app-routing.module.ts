@@ -12,8 +12,8 @@ const routes: Routes = [
   {
     path: 'bookings',
     loadChildren: () =>
-      import('./micro-frontend-host/micro-frontend-host.module').then(
-        (m) => m.MicroFrontendHostModule
+      import('./micro-frontends/bookings-host.module').then(
+        (m) => m.BookingsHostModule
       ),
   },
 ];

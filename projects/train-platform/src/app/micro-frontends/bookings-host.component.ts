@@ -10,4 +10,4 @@ import { Component } from '@angular/core';
     ></mf-bookings-entry>
   `,
 })
-export class MicroFrontendHostComponent {}
+export class BookingsHostComponent {}

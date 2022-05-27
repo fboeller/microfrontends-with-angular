@@ -1,8 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { BookingsHostComponent } from './bookings-host.component';
 import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
-import { MicroFrontendHostComponent } from './micro-frontend-host.component';
 import { MicrofrontendLanguageDirective as MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
 import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
 import { MicrofrontendZoneDirective as MicroFrontendZoneDirective } from './micro-frontend-zone.directive';
@@ -19,13 +19,13 @@ const routes: Routes = [
         ? getMicrofrontendBundleUrl('bookings')
         : 'http://localhost:4201/main.js',
     },
-    component: MicroFrontendHostComponent,
+    component: BookingsHostComponent,
   },
 ];
 
 @NgModule({
   declarations: [
-    MicroFrontendHostComponent,
+    BookingsHostComponent,
     MicroFrontendLanguageDirective,
     MicroFrontendRoutingDirective,
     MicroFrontendZoneDirective,
@@ -33,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MicroFrontendHostModule {}
+export class BookingsHostModule {}
