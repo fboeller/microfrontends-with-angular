@@ -83,10 +83,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": ["projects/train-platform/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "projects/train-platform/**/*.ts",
+              "projects/train-platform/**/*.html"
+            ]
           }
         }
       }
