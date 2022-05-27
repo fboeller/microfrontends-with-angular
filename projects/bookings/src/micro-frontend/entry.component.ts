@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Language } from '../app/translation-loader.provider';
 
 /**
@@ -34,9 +34,6 @@ export class EntryComponent implements OnChanges, OnDestroy {
   @Input() route?: string;
   @Output() routeChange = new EventEmitter<RouterEvent>();
 
-  @Input() microtaskEmpty$?: Observable<void>;
-  microtaskEmpty$$ = new Subject<Observable<void>>();
-
   @Input() language?: Language;
 
   private readonly subscription: Subscription;
@@ -54,9 +51,6 @@ export class EntryComponent implements OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.microtaskEmpty$ && this.microtaskEmpty$) {
-      this.microtaskEmpty$$.next(this.microtaskEmpty$);
-    }
     if (changes.route && this.route) {
       this.router.navigateByUrl(this.route, { state: { fromPlatform: true } });
     }
