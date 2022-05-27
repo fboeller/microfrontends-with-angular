@@ -28,7 +28,7 @@ export class NavbarComponent {
     this.translateService.use(lang);
   }
 
-  showToast() {
+  showToast(): void {
     this.toastService.success('Choo choo!');
   }
 }
