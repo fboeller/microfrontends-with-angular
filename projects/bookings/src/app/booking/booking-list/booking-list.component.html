@@ -1,0 +1,20 @@
+<ul *ngIf="bookings.length; else noBookings">
+  <li *ngFor="let booking of bookings">
+    <p>{{ "booking-list.booking" | translate }} {{ booking.id }}</p>
+    <p>{{ "booking-list.journey" | translate }} {{ booking.journeyId }}</p>
+    <p>
+      {{ "booking-list.reserveSeat" | translate }}:
+      {{ booking.options.reserveSeat }}
+    </p>
+    <p>
+      {{ "booking-list.firstClass" | translate }}:
+      {{ booking.options.firstClass }}
+    </p>
+  </li>
+</ul>
+<ng-template #noBookings>
+  <p>{{ "booking-list.noBookings" | translate }}</p>
+  <p>
+    <a routerLink="/">{{ "booking-list.goToAvailableJourneys" | translate }}</a>
+  </p>
+</ng-template>

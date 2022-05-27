@@ -4,14 +4,14 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { BookingService } from '../booking.service';
+import { BookingService } from '../../booking.service';
 
 @Component({
-  selector: 'mf-booking',
-  templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css'],
+  selector: 'mf-booking-form',
+  templateUrl: './booking-form.component.html',
+  styleUrls: ['./booking-form.component.css'],
 })
-export class BookingComponent implements OnInit {
+export class BookingFormComponent implements OnInit {
   reserveSeat = false;
   firstClass = false;
   journeyId$!: Observable<string>;
