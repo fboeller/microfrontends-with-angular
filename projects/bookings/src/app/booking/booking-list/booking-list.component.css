@@ -12,3 +12,8 @@ li {
 li + li {
   margin-top: 4px;
 }
+
+section {
+  border: 1px solid black;
+  padding: 8px;
+}
