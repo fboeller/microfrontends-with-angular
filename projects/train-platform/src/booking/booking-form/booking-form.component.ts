@@ -7,11 +7,11 @@ import { filter, map } from 'rxjs/operators';
 import { BookingService } from '../booking.service';
 
 @Component({
-  selector: 'app-booking',
-  templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css'],
+  selector: 'app-booking-form',
+  templateUrl: './booking-form.component.html',
+  styleUrls: ['./booking-form.component.css'],
 })
-export class BookingComponent implements OnInit {
+export class BookingFormComponent implements OnInit {
   reserveSeat = false;
   firstClass = false;
   journeyId$!: Observable<string>;
