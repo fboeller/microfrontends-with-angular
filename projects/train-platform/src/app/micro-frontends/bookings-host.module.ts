@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingsHostComponent } from './bookings-host.component';
 import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
+import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BookingsHostComponent],
+  declarations: [BookingsHostComponent, MicroFrontendRoutingDirective],
   imports: [RouterModule.forChild(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
