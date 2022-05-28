@@ -10,7 +10,6 @@ import {
 import { Router, RoutesRecognized } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { Language } from '../app/translation-loader.provider';
 
 /**
  * An event sent from the micro frontend to the platform to indicate that the route within the micro frontend has changed.
@@ -34,7 +33,7 @@ export class EntryComponent implements OnChanges, OnDestroy {
   @Input() route?: string;
   @Output() routeChange = new EventEmitter<RouterEvent>();
 
-  @Input() language?: Language;
+  @Input() language?: 'en' | 'de';
 
   private readonly subscription: Subscription;
 

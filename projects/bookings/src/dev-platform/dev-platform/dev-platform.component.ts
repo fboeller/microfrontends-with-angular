@@ -1,6 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Language } from '../../app/translation-loader.provider';
 
 @Component({
   selector: 'mf-dev-platform',
@@ -8,7 +7,7 @@ import { Language } from '../../app/translation-loader.provider';
   styleUrls: ['./dev-platform.component.css'],
 })
 export class DevPlatformComponent {
-  language: Language = 'en';
+  language: 'en' | 'de' = 'en';
   @HostBinding('class') theme: 'light' | 'dark' = 'light';
 
   constructor(private translateService: TranslateService) {}
@@ -17,7 +16,7 @@ export class DevPlatformComponent {
     this.theme = theme;
   }
 
-  updateLanguage(lang: Language): void {
+  updateLanguage(lang: 'en' | 'de'): void {
     this.language = lang;
     this.translateService.use(lang);
   }
