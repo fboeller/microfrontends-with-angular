@@ -13,7 +13,7 @@ A visit to `localhost:4200` shows the application.
 
 ## Benefits of microfrontends
 
-- Vertical services (backend and frontend are fully owned by one team)
+- Vertical services (backend and frontend are fully owned by one team, see [micro-frontends.org](https://micro-frontends.org/))
 - Ship code independently and faster
 - Freedom from existing opinionated codebase
 - Failures will likely only affect your microfrontend and not the whole app and you can release a fix more quickly
