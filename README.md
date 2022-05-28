@@ -11,6 +11,19 @@ $ npm start
 
 A visit to `localhost:4200` shows the application.
 
+## Bookings local development
+
+Serve the bookings microfrontend inside the train-platform application (does not support live-reload for microfrontend):
+```
+npm start train-platform
+npm run ng run bookings:build:local-web-components && npx http-server projects/bookings/dist --port 4201
+```
+
+Serve the bookings microfrontend in isolation using the angular dev server:
+```
+npm start bookings
+```
+
 ## Benefits of microfrontends
 
 - Vertical services (backend and frontend are fully owned by one team)

@@ -146,6 +146,10 @@
             "main": "projects/bookings/src/main.ts",
             "polyfills": "projects/bookings/src/polyfills.ts",
             "tsConfig": "projects/bookings/tsconfig.app.json",
+            "aot": true,
+            "optimization": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
             "assets": [
               "projects/bookings/src/favicon.ico",
               "projects/bookings/src/assets"
@@ -169,6 +173,19 @@
                   "maximumError": "4kb"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "fileReplacements": [
                 {
                   "replace": "projects/bookings/src/environments/environment.ts",
@@ -177,28 +194,26 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+            "local-web-components": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/bookings/src/environments/environment.ts",
+                  "with": "projects/bookings/src/environments/environment.local-web-components.ts"
+                }
+              ]
             }
-          },
-          "defaultConfiguration": "production"
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bookings:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "bookings:build:production"
-            },
-            "development": {
-              "browserTarget": "bookings:build:development"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
