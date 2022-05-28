@@ -11,11 +11,6 @@
     "check": "npm run lint && npm run test && npm run prettier-check",
     "package": "npm run build-lib && npm run npm-pack"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check"
-    }
-  },
   "jest": {
     "roots": [
       "<rootDir>/projects/train-platform/src"
@@ -71,7 +66,6 @@
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "eslint": "^8.12.0",
-    "husky": "^4.3.0",
     "jest": "^28.1.0",
     "ng-packagr": "^13.3.1",
     "ngx-build-plus": "^13.0.1",
