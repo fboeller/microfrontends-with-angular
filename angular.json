@@ -192,8 +192,7 @@
                   "replace": "projects/bookings/src/environments/environment.ts",
                   "with": "projects/bookings/src/environments/environment.prod.ts"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "local-web-components": {
               "fileReplacements": [
