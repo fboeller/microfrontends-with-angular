@@ -52,29 +52,6 @@ Redirect: `http://localhost:4200/frontends/<frontend>/` -> `http://localhost:420
 
 ## Fancy diagrams
 
-### Component hierarchies
-
-```mermaid
-graph TB
-    subgraph "Shell app"
-        n7(app-root)
-        n8(app-navbar)
-        n9(app-journey-selection)
-        n10(app-bookings-host)
-        n7-->n8
-        n7-->n9
-        n7-->n10
-    end
-    subgraph "Microfrontend"
-        n13(mf-bookings-entry)
-        n14(mf-booking-form)
-        n15(mf-booking-list)
-    end
-    n13-->n14
-    n10-->n13
-    n13-->n15
-```
-
 ### User clicks on "Book" of Journey 1
 ```mermaid
 sequenceDiagram
@@ -112,4 +89,27 @@ sequenceDiagram
     trainPlatform->>windowUrl: Set url to "/"
     trainPlatform->>bookings: Pass url "/" via component input
     trainPlatform->>user: Render home page
+```
+
+### Component hierarchies
+
+```mermaid
+graph TB
+    subgraph "Shell app"
+        n7(app-root)
+        n8(app-navbar)
+        n9(app-journey-selection)
+        n10(app-bookings-host)
+        n7-->n8
+        n7-->n9
+        n7-->n10
+    end
+    subgraph "Microfrontend"
+        n13(mf-bookings-entry)
+        n14(mf-booking-form)
+        n15(mf-booking-list)
+    end
+    n13-->n14
+    n10-->n13
+    n13-->n15
 ```
