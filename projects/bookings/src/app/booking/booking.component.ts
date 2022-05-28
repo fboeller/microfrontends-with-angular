@@ -1,41 +1,17 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { ThemeService } from './theme.service';
 
 @Component({
-  selector: 'app-root',
-  template: `
-    <div>
-      <app-navbar></app-navbar>
-      <router-outlet></router-outlet>
-    </div>
-  `,
-  styleUrls: ['./app.component.css'],
+  selector: 'mf-booking',
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
-
-  @HostBinding('class') classes = 'dark';
-
-  constructor(
-    private router: Router,
-    private titleService: Title,
-    private themeService: ThemeService
-  ) {
-    this.subscription = this.themeService.theme$.subscribe((theme) => {
-      this.classes = theme;
-    });
-  }
+export class BookingComponent implements OnInit {
+  constructor(private router: Router, private titleService: Title) {}
 
   ngOnInit() {
     this.updatePageTitleOnRouteChange();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   private updatePageTitleOnRouteChange() {

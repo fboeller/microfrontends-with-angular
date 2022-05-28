@@ -9,9 +9,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TranslationLoaderProvider } from '../translation-loader.provider';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
+import { BookingComponent } from './booking.component';
 
 @NgModule({
-  declarations: [BookingFormComponent, BookingListComponent],
+  declarations: [BookingComponent, BookingFormComponent, BookingListComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -21,10 +22,12 @@ import { BookingListComponent } from './booking-list/booking-list.component';
       {
         path: 'bookings/journey/:journeyId',
         component: BookingFormComponent,
+        data: { title: 'Book journey' },
       },
       {
         path: 'bookings',
         component: BookingListComponent,
+        data: { title: 'My bookings' },
       },
     ]),
     HotToastModule.forRoot(),
@@ -33,6 +36,6 @@ import { BookingListComponent } from './booking-list/booking-list.component';
       defaultLanguage: 'en',
     }),
   ],
-  exports: [BookingFormComponent],
+  exports: [BookingComponent],
 })
 export class BookingModule {}

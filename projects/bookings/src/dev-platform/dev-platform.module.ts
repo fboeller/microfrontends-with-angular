@@ -16,6 +16,7 @@ import { DevPlatformComponent } from './dev-platform/dev-platform.component';
         path: '',
         pathMatch: 'full',
         component: DevPlatformPageComponent,
+        data: { title: 'Journeys' },
       },
     ]),
     BookingModule,

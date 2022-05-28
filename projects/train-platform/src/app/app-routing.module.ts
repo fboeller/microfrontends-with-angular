@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: JourneySelectionComponent,
+    data: { title: 'Journeys' },
   },
   {
     path: 'bookings',

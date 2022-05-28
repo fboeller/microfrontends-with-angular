@@ -28,7 +28,7 @@ export interface RouterEvent {
 }
 
 @Component({
-  template: `<router-outlet></router-outlet>`,
+  template: `<mf-booking></mf-booking>`,
 })
 export class EntryComponent implements OnChanges, OnDestroy {
   @Input() route?: string;
