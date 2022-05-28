@@ -1,10 +1,10 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="/">{{ "navbar.home" | translate }}</a>
+      <a routerLink="/" routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}">{{ "navbar.home" | translate }}</a>
     </li>
     <li>
-      <a routerLink="/bookings">{{ "navbar.myBookings" | translate }}</a>
+      <a routerLink="/bookings" routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}">{{ "navbar.myBookings" | translate }}</a>
     </li>
   </ul>
   <div class="page-options">
