@@ -111,6 +111,5 @@ sequenceDiagram
     user->>trainPlatform: Click on "Home" from "My bookings"
     trainPlatform->>windowUrl: Set url to "/"
     trainPlatform->>bookings: Pass url "/" via component input
-    bookings->>bookings: Set active route to NoComponent
     trainPlatform->>user: Render home page
 ```
