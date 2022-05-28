@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslationLoaderProvider } from '../translation-loader.provider';
+import { TranslationLoaderProvider } from './translation-loader.provider';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingComponent } from './booking.component';

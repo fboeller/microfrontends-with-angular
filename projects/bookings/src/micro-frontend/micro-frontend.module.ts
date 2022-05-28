@@ -2,7 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { DoBootstrap, Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { RouterModule } from '@angular/router';
-import { BookingModule } from '../app/booking/booking.module';
+import { BookingModule } from '../app/booking.module';
 import { EntryComponent } from './entry.component';
 import { NoComponent } from './no.component';
 import { NoopLocationStrategy } from './noop-location-strategy';

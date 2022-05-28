@@ -4,7 +4,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { BookingService } from '../../booking.service';
+import { BookingService } from '../booking.service';
 
 @Component({
   selector: 'mf-booking-form',

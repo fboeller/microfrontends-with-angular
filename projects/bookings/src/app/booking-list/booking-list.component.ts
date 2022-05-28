@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Booking, BookingService } from '../../booking.service';
+import { Booking, BookingService } from '../booking.service';
 
 @Component({
   selector: 'mf-booking-list',
