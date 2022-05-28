@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BookingModule } from '../booking/booking.module';
 import { BookingComponent } from '../booking/booking/booking.component';
 import { JourneySelectionComponent } from '../journey/journey-selection/journey-selection.component';
@@ -10,10 +10,12 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: JourneySelectionComponent,
+    data: { title: 'Journeys' },
   },
   {
     path: 'bookings/journey/:journeyId',
     component: BookingComponent,
+    data: { title: 'Book journey' },
   },
 ];
 
