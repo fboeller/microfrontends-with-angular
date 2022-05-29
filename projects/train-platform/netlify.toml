@@ -1,0 +1,14 @@
+[build]
+publish = "dist"
+command = "npm ci && npm run lint train-platform && npm run test train-platform && npm run build train-platform -- --configuration production"
+
+[[redirects]]
+from = "/frontends/bookings/*"
+to = "https://cozy-concha-0ad972.netlify.app/:splat"
+force = true
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
