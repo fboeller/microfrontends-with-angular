@@ -2,10 +2,15 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BookingsHostComponent } from './bookings-host.component';
 import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
+import { MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
 import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
 
 @NgModule({
-  declarations: [BookingsHostComponent, MicroFrontendRoutingDirective],
+  declarations: [
+    BookingsHostComponent,
+    MicroFrontendRoutingDirective,
+    MicroFrontendLanguageDirective,
+  ],
   imports: [
     RouterModule.forChild([
       {
