@@ -1,17 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { BookingComponent } from './booking.component';
 
 @NgModule({
-  declarations: [BookingFormComponent],
+  declarations: [BookingComponent, BookingFormComponent],
   imports: [
+    BrowserModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([
+    RouterModule.forRoot([
       {
         path: 'journey/:journeyId',
         component: BookingFormComponent,
@@ -19,7 +22,8 @@ import { BookingFormComponent } from './booking-form/booking-form.component';
       },
     ]),
     HotToastModule.forRoot(),
-    TranslateModule.forChild(),
+    TranslateModule.forRoot(),
   ],
+  bootstrap: [BookingComponent],
 })
 export class BookingModule {}
