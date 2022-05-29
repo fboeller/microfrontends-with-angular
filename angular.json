@@ -190,6 +190,14 @@
                   "with": "projects/bookings/src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "local-web-components": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/bookings/src/environments/environment.ts",
+                  "with": "projects/bookings/src/environments/environment.local-web-components.ts"
+                }
+              ]
             }
           }
         },
