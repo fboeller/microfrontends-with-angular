@@ -7,11 +7,12 @@ import { RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { TranslateModule } from '@ngx-translate/core';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingComponent } from './booking.component';
 import { TranslationLoaderProvider } from './translation-loader.provider';
 
 @NgModule({
-  declarations: [BookingComponent, BookingFormComponent],
+  declarations: [BookingComponent, BookingListComponent, BookingFormComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -22,6 +23,11 @@ import { TranslationLoaderProvider } from './translation-loader.provider';
         path: 'bookings/journey/:journeyId',
         component: BookingFormComponent,
         data: { title: 'Book journey' },
+      },
+      {
+        path: 'bookings',
+        component: BookingListComponent,
+        data: { title: 'My bookings' },
       },
     ]),
     HotToastModule.forRoot(),

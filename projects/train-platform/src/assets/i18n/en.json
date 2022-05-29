@@ -1,6 +1,7 @@
 {
   "navbar": {
     "home": "Home",
+    "myBookings": "My Bookings",
     "language": {
       "text": "Language",
       "en": "English",
