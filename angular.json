@@ -137,8 +137,10 @@
       "prefix": "mf",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:build",
           "options": {
+            "singleBundle": true,
+            "outputHashing": "none",
             "outputPath": "projects/bookings/dist",
             "index": "projects/bookings/src/index.html",
             "main": "projects/bookings/src/main.ts",
@@ -187,8 +189,7 @@
                   "replace": "projects/bookings/src/environments/environment.ts",
                   "with": "projects/bookings/src/environments/environment.prod.ts"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             }
           }
         },

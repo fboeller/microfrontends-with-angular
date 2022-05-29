@@ -24,6 +24,6 @@ import { BookingComponent } from './booking.component';
     HotToastModule.forRoot(),
     TranslateModule.forRoot(),
   ],
-  bootstrap: [BookingComponent],
+  exports: [BookingComponent],
 })
 export class BookingModule {}
