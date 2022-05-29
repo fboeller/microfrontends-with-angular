@@ -16,7 +16,7 @@ import { BookingComponent } from './booking.component';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'journey/:journeyId',
+        path: 'bookings/journey/:journeyId',
         component: BookingFormComponent,
         data: { title: 'Book journey' },
       },
