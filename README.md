@@ -1,5 +1,17 @@
 # Microfrontends with Angular
 
+## Watch the video
+
+This project was created to create an instructional video on how to split your angular application into multiple microfrontends using web components.
+
+[Watch Web Component-based Micro Frontends with Angular on YouTube](https://www.youtube.com/watch?v=ee17YczpCpU)
+
+## Blog posts
+
+We have also each published a post on our blogs based on this video:
+- [Read Why Microfrontends? on traveling-coderman.net](https://traveling-coderman.net/code/microfrontends/why/)
+- [Read Web Component-based Micro Frontends with Angular on xkons.de](https://traveling-coderman.net/code/microfrontends/why/)
+
 ## Local development setup
 
 ```
