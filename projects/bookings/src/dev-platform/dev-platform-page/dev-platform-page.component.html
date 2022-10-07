@@ -1,0 +1,8 @@
+<h2>Bookings DEV Platform</h2>
+<ul *ngFor="let journey of journeys">
+  <li>
+    <a [routerLink]="['bookings', 'journey', journey.id]"
+      >Journey {{ journey.id }}</a
+    >
+  </li>
+</ul>

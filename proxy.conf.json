@@ -1,0 +1,10 @@
+{
+    "/frontends/bookings/*": {
+        "target": "http://localhost:4201",
+        "secure": false,
+        "logLevel": "info",
+        "pathRewrite": {
+            "^/frontends/bookings/": "/"
+        }
+    }
+}

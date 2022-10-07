@@ -1,0 +1,18 @@
+{
+  "booking": {
+    "title": "Book journey {{ id }}",
+    "reserveSeatQuestion": "Do you want to reserve a seat?",
+    "firstClassQuestion": "Do you want to sit in first class?",
+    "bookAction": "Book",
+    "confirmation": "Booked a journey!",
+    "error": "Journey could not be booked!"
+  },
+  "booking-list": {
+    "booking": "Booking",
+    "journey": "Journey",
+    "firstClass": "First class",
+    "reserveSeat": "Reserved seat",
+    "noBookings": "You haven't booked any journey so far.",
+    "goToAvailableJourneys": "Jump to the available journeys"
+  }
+}

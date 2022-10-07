@@ -1,0 +1,3 @@
+[build]
+publish = "dist"
+command = "npm ci && npm run lint bookings && npm run test bookings && npm run build bookings -- --configuration production"

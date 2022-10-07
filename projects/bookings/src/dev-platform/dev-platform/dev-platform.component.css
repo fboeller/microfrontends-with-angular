@@ -1,0 +1,55 @@
+:host {
+  --background-color: white;
+  --font-color: black;
+  display: block;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  height: 100vh;
+  padding: 8px;
+}
+
+:host.dark {
+  --background-color: black;
+  --font-color: white;
+}
+
+nav {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+li {
+  line-height: 40px;
+  vertical-align: middle;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.active-nav-item {
+  cursor: default;
+  text-decoration: none;
+}
+
+.page-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  line-height: 40px;
+}
+
+label {
+  margin-right: 0.5rem;
+}

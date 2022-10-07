@@ -7,7 +7,7 @@ import { filter, map } from 'rxjs/operators';
 import { BookingService } from '../booking.service';
 
 @Component({
-  selector: 'app-booking-form',
+  selector: 'mf-booking-form',
   templateUrl: './booking-form.component.html',
   styleUrls: ['./booking-form.component.css'],
 })

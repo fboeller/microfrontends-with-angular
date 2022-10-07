@@ -1,0 +1,28 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/" routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </li>
+    <li>
+      <a routerLink="/bookings" routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}">My Bookings</a>
+    </li>
+  </ul>
+  <div class="page-options">
+    <div>
+      <label>Theme:</label>
+      <select [ngModel]="theme" (ngModelChange)="updateTheme($event)">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    <div>
+      <label>Language:</label>
+      <select [ngModel]="language" (ngModelChange)="updateLanguage($event)">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<mf-booking></mf-booking>
