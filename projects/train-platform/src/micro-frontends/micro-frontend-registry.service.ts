@@ -34,9 +34,10 @@ export class MicroFrontendRegistryService {
   /**
    * Loads the given bundle if not already loaded, registering its custom elements in the browser.
    *
-   * @param bundleUrl The url of the bundle, can be absolute or relative to the domain + base href.
+   * @param bundleUrl$ The url of the bundle, can be absolute or relative to the domain + base href.
    */
-  async loadBundle(bundleUrl: string): Promise<boolean> {
+  async loadBundle(bundleUrl$: Promise<string>): Promise<boolean> {
+    const bundleUrl = await bundleUrl$;
     if (['LOADING', 'LOADED'].includes(this.getLoadingState(bundleUrl))) {
       return true;
     }

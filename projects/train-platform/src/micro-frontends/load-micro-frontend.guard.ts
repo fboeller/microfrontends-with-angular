@@ -9,11 +9,12 @@ export class LoadMicroFrontendGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): Promise<boolean> {
-    const bundleUrl = route.data.bundleUrl as unknown;
-    if (!(typeof bundleUrl === 'string')) {
+    const bundleUrl: Promise<string> = route.data.bundleUrl;
+    if (!(typeof bundleUrl.then === 'function')) {
       console.error(`
-        The LoadMicroFrontendGuard is missing information on which bundle to load.
-        Did you forget to provide a bundleUrl: string as data to the route?
+        You need to provide the Promise which loads the frontend-meta.json
+        and maps to the entryPointBundleName to the LoadMicroFrontendGuard.
+        Did you forget to provide the bundleUrl as route data?
       `);
       return Promise.resolve(false);
     }
