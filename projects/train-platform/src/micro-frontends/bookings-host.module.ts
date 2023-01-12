@@ -6,8 +6,14 @@ import { LoadMicroFrontendGuard } from './load-micro-frontend.guard';
 import { MicroFrontendLanguageDirective } from './micro-frontend-language.directive';
 import { MicroFrontendRoutingDirective } from './micro-frontend-routing.directive';
 
-const getMicrofrontendBundleUrl = (frontendName: 'bookings') =>
-  `/frontends/${frontendName}/main.js`;
+const getMicrofrontendBundleUrl = async (frontendName: 'bookings') => {
+  const metaDataJsonUrl = `/frontends/${frontendName}/frontend-meta.json`;
+  const frontendMetaData = await fetch(metaDataJsonUrl).then((response) =>
+    response.json()
+  );
+  const entryPointBundleName = frontendMetaData.entryPointBundleName;
+  return `/frontends/${frontendName}/${entryPointBundleName}`;
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +30,7 @@ const getMicrofrontendBundleUrl = (frontendName: 'bookings') =>
         data: {
           bundleUrl: environment.production
             ? getMicrofrontendBundleUrl('bookings')
-            : 'http://localhost:4201/main.js',
+            : Promise.resolve('http://localhost:4201/main.js'),
         },
       },
     ]),

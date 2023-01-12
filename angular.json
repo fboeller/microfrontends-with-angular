@@ -141,7 +141,7 @@
           "builder": "ngx-build-plus:build",
           "options": {
             "singleBundle": true,
-            "outputHashing": "none",
+            "outputHashing": "all",
             "outputPath": "projects/bookings/dist",
             "index": "projects/bookings/src/index.html",
             "main": "projects/bookings/src/main.ts",
