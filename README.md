@@ -10,7 +10,7 @@ This project was created to create an instructional video on how to split your a
 
 We have also each published a post on our blogs based on this video:
 - [Read Why Microfrontends? on traveling-coderman.net](https://traveling-coderman.net/code/microfrontends/why/)
-- [Read Web Component-based Micro Frontends with Angular on xkons.de](https://traveling-coderman.net/code/microfrontends/why/)
+- [Read Web Component-based Micro Frontends with Angular on xkons.de](https://www.xkons.de/posts/ng-micro-frontends/)
 
 ## Local development setup
 
