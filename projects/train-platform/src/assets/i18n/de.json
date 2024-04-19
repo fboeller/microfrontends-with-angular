@@ -1,6 +1,7 @@
 {
   "navbar": {
     "home": "Start",
+    "myBookings": "Meine Buchungen",
     "language": {
       "text": "Sprache",
       "en": "Englisch",
@@ -11,14 +12,6 @@
       "light": "Hell",
       "dark": "Dunkel"
     }
-  },
-  "booking": {
-    "title": "Reise {{ id }} buchen",
-    "reserveSeatQuestion": "Möchten Sie einen Sitzplatz reservieren?",
-    "firstClassQuestion": "Möchten Sie in der ersten Klasse sitzen?",
-    "bookAction": "Buchen",
-    "confirmation": "Reise gebucht!",
-    "error": "Reise konnte nicht gebucht werden!"
   },
   "journey": {
     "bookAction": "Buchen"

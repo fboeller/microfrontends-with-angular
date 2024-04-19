@@ -1,0 +1,18 @@
+{
+  "booking": {
+    "title": "Reise {{ id }} buchen",
+    "reserveSeatQuestion": "Möchten Sie einen Sitzplatz reservieren?",
+    "firstClassQuestion": "Möchten Sie in der ersten Klasse sitzen?",
+    "bookAction": "Buchen",
+    "confirmation": "Reise gebucht!",
+    "error": "Reise konnte nicht gebucht werden!"
+  },
+  "booking-list": {
+    "booking": "Buchung",
+    "journey": "Reise",
+    "firstClass": "Erste Klasse",
+    "reserveSeat": "Sitzplatzreservierung",
+    "noBookings": "Sie haben noch keine Reise gebucht.",
+    "goToAvailableJourneys": "Zu den Reiseangeboten"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "navbar": {
     "home": "Home",
+    "myBookings": "My Bookings",
     "language": {
       "text": "Language",
       "en": "English",
@@ -11,14 +12,6 @@
       "light": "Light",
       "dark": "Dark"
     }
-  },
-  "booking": {
-    "title": "Book journey {{ id }}",
-    "reserveSeatQuestion": "Do you want to reserve a seat?",
-    "firstClassQuestion": "Do you want to sit in first class?",
-    "bookAction": "Book",
-    "confirmation": "Booked a journey!",
-    "error": "Journey could not be booked!"
   },
   "journey": {
     "bookAction": "Book"
